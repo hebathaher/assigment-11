@@ -1,0 +1,86 @@
+
+const message = 'hello';
+foo();
+function foo() {
+    alert(message);
+}
+سوف يظهر قيمة المتغير message وهي hello في Dialog box 
+===========================================================
+const message = 'hello';
+foo();
+function foo() {
+    let message = 'hi'
+    alert(message);
+}
+سوف يطبع قيمة المتغير message الموجودة داخل نطاق function ال وهي hi في Dialog box
+===========================================================
+foo();
+const message = 'hello';
+function foo() {
+    alert(message);
+}
+ سوف يطبع قيمة المتغير message وهيhello في Dialog box
+===========================================================
+foo();
+function foo() {
+    alert(message);
+}
+var message = 'hello';
+سوف يطبع undefined لانه غير معرفة لا داخل نطاق function fooولا قبل الاستدعاء للfunction 
+===========================================================
+if (true) {
+    let message = 'hello';
+}
+alert(message);
+message is not defined
+===========================================================
+if (true) {
+    var message = 'hello';
+}
+alert(message);
+ سوف يطبع قيمة المتغير message وهيhello في Dialog box
+===========================================================
+{
+    let message = 'hello';
+    message = 'hi';
+}
+alert(message);
+ سوف يطبع قيمة المتغير message وهيhi في Dialog box
+===========================================================
+let message = 'hello';
+{
+    message = 'hi';
+}
+alert(message);
+ سوف يطبع قيمة المتغير message وهيhi في Dialog box
+===========================================================
+foo();
+function foo() {
+    {
+        const message = 'hello';
+    }
+    
+    alert(message);
+}
+message is not defined
+===========================================================
+foo();
+function foo() {
+    {
+        var message = 'hello';
+    }
+    
+    alert(message);
+}
+سوف يطبع hello 
+===========================================================
+foo();
+function foo() {
+    {
+        var message = 'hello';
+    }
+}
+alert(message);
+
+message is not defined
+

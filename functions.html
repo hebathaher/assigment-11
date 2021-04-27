@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ // write a function called "isEven" that takes a number as 
+  // a parameter and returns true if the number is even and false otherwise.
+        function isEven(parameter){
+    if(parameter%2==0){
+        return true;
+    }else {
+        return false;
+    }
+}
+   //write a function called "getOdd" that takes an array of 
+   //numbers as a parameter and returns an array containing 
+  // the odd numbers only. you must use the "isEven" function above.   
+         function getOdd(arr){
+             var str=" ";
+             for(var i=0;i<arr.length;i++){
+               if(!(isEven(arr[i]))){
+                 str +=arr[i] +" , ";
+                  }  
+             } 
+             return str;
+}
+//write a function called "getMax" that takes 
+//an array of numbers as a parameter and returns the largest number.
+function getMax(x){
+    let largest=x[0];
+        for(var i=0;i<=x.length;i++){
+            if(x[i]>=largest)
+            largest=x[i];
+        }
+       return largest;
+}
+
+//write a function called "stringContains" that takes two strings as parameters and returns
+// true if the first string contains the second, and false otherwise.
+function stringContains(par1,par2){
+    if(par1.includes(par2)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//write a function called "capitalizeWords"
+// that takes a string as a parameter and capitalizes each word.
+function capitalizeWords(string_val){
+var result=string_val.split(' ');
+for(var x=0;x<result.length;x++){
+    result[x] = result[x][0].toUpperCase() + result[x].substr(1);
+}
+return result.join(' ');
+} 
+//write a function called "arrayContains" that takes two arrays as parameters and returns
+// true if the first array contains the second, and false otherwise.
+ function arrayContains(arr1,arr2){
+    let element = true;
+
+for (let i = 0; i < arr2.length; i++){
+    if (arr1.indexOf(arr2[i]) === -1) {
+        element = false;
+        break;
+    }
+ }
+ return element;
+}
+
+
+// write a fnuction called "getSequence" that takes a number 
+//as a parameter and returns an array containing the numbers from 0 to that number. (e.g. getSequence(5) will return [0, 1, 2, 3, 4, 5], getSequence(0) 
+//will return [0], getSequence(-2) will return [0, -1, -2]).
+ function getSequance(par){ 
+    let str=" ";
+   if(par>=0){
+     for (var i=0;i<=par;i++){
+       str+=i+" , ";
+   }  
+   } else {
+    for (var j=0;j>=par;j--){
+       str += j+" , ";
+   }  
+   }
+   
+   return str;
+ }
+
+//write a function called "getSlug" that takes 
+//a string as input and generates a slug (i.e. changes all uppercase letters into lowercase and replaces spaces with a dash "-").
+//example: getSlug("I love JS") will return "i-love-js"
+ function getSlug(str){
+  var x=str.split(' ').join('-').toLowerCase();
+  return x;
+ }
+ 
+    </script>
+ 
+</body>
+</html>
