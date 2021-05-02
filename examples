@@ -4,7 +4,7 @@ foo();
 function foo() {
     alert(message);
 }
-سوف يظهر قيمة المتغير message وهي hello في Dialog box 
+سوف يظهر قيمة المتغير message وهي hello في Dialog box  السبب لانه المتغير global variable 
 ===========================================================
 const message = 'hello';
 foo();
@@ -12,14 +12,14 @@ function foo() {
     let message = 'hi'
     alert(message);
 }
-سوف يطبع قيمة المتغير message الموجودة داخل نطاق function ال وهي hi في Dialog box
+سوف يطبع قيمة المتغير message الموجودة داخل نطاق function ال وهي hi في Dialog box لانه الاولوية لقيمة المتغير داخل الفنكشن لانها local variable
 ===========================================================
 foo();
 const message = 'hello';
 function foo() {
     alert(message);
 }
- سوف يطبع قيمة المتغير message وهيhello في Dialog box
+ سوف يطبع قيمة المتغير message وهيhello في Dialog box لانه المتغير معرف global 
 ===========================================================
 foo();
 function foo() {
@@ -32,8 +32,60 @@ if (true) {
     let message = 'hello';
 }
 alert(message);
-message is not defined
+
+السبب انه المتغير معرف داخل {} يعني local غير معرفة خارج {} النتيجة  message is not defined 
 ===========================================================
+if (true) {
+    var message = 'hello';
+}
+alert(message);
+ سوف يطبع قيمة المتغير message وهيhello في Dialog box
+===========================================================
+{
+    let message = 'hello';
+    message = 'hi';
+}
+alert(message);
+ سوف يطبع قيمة المتغير message وهيhi في Dialog box السبب انه تم اعادة تعيين قيمة جديدة للمتغير message 
+===========================================================
+let message = 'hello';
+{
+    message = 'hi';
+}
+alert(message);
+ سوف يطبع قيمة المتغير message وهيhi في Dialog box  السبب هو انه المتغير تم تعريفه global variable حتى لو تم اعادة تعيين قيمة جديدة للمتغير داخل {} سوف يراها القيمة الجديدة 
+===========================================================
+foo();
+function foo() {
+    {
+        const message = 'hello';
+    }
+    
+    alert(message);
+}
+السبب انه المتغير معرف داخل {} يعني local غير معرفة خارج {} النتيجة  message is not defined 
+===========================================================
+foo();
+function foo() {
+    {
+        var message = 'hello';
+    }
+    
+    alert(message);
+}
+سوف يطبع hello  لانه جملة الطباعة داخل الfunction
+===========================================================
+foo();
+function foo() {
+    {
+        var message = 'hello';
+    }
+}
+alert(message);
+
+message is not defined
+المتغير غير معرف داخل function foo
+
 if (true) {
     var message = 'hello';
 }
